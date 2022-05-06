@@ -1,4 +1,4 @@
-public class EndageredAnimals {
+public class EndageredAnimals extends Animals implements DatabaseManagement {
     private String health;
     private String age;
 
@@ -15,6 +15,16 @@ public class EndageredAnimals {
     //constant type
     public static final String ANIMAL_TYPE="endangered";
 public EndageredAnimals(String name,String type,String health,String age){
-
+    super(name, type); // call superclass(Animals) methods, and to access the superclass constructor
+    this.health=health;
+    this.age=age;
+    this.type = type;
 }
+//getter for age and health
+    public String getHealth() {
+        return health;
+    }
+    public String getAge() {
+        return age;
+    }
 }
