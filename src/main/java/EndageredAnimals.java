@@ -36,10 +36,7 @@ public EndageredAnimals(String name,String type,String health,String age){
             throw new IllegalArgumentException("Fields cannot be empty");
         }
         try (Connection con=DB.sql2o.open()){
-
-
             String sql ="INSERT INTO animals (name,type,health,age) VALUES (:name,:type,:health,:age)";
-
             this.id=(int) con.createQuery(sql,true)
                     .addParameter("name",this.name)
                     .addParameter("type",this.type)
