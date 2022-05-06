@@ -2,6 +2,8 @@ import org.sql2o.Sql2oException;
 //import java.sql.Connection;
 import org.sql2o.Connection;
 
+import java.util.Objects;
+
 public class Animals implements DatabaseManagement {
     public String name;
     public String health;
@@ -117,6 +119,18 @@ public class Animals implements DatabaseManagement {
         } catch (Sql2oException ex) {
             System.out.println(ex);
         }
+    }
+    @Override
+    public boolean equals(Object o){
+        if(this == o) return true;
+        if (o == null || getClass() !=o.getClass()) return false;
+        Animals animals = (Animals) o;
+        return name.equals(animals.name)&&
+                type.equals(animals.type);
+    }
+    @Override
+    public int hashCode(){
+        return Objects.hash(name, type);
     }
 }
 
