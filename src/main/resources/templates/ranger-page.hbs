@@ -8,6 +8,8 @@
                     {{#each rangers as |r|}}
                         <div class="entries bg-success pb-2">
                             <p class="text">Ranger: {{r.name}}</p><br>
+                            <p class="text">Ranger: {{r.badge_number}}</p><br>
+                            <p class="text">Ranger: {{r.phone_number}}</p><br>
                             <a href="/view/ranger/sightings/{{r.id}}" class="mb-3"><button class="btn btn-primary btn-md">Sightings</button></a>
                         </div>
                         <br>

@@ -38,7 +38,7 @@ The website allows Rangers to track wildlife sightings in the area. A wildlife e
 
 ### DATABASE SET UP.
 ```
-In PSQL:
+* Type in psql
 * CREATE DATABASE wildlife_tracker;
 * \c wildlife_tracker
 * CREATE TABLE animals (id serial PRIMARY KEY, name varchar,type VARCHAR,health VARCHAR,age VARCHAR);
