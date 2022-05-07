@@ -1,9 +1,8 @@
 {{#partial "content"}}
-<center>
-    <form action="/create/animal/new" method="post" class="mt-5 text-center w-50">
+
+    <form action="/create/animal/new" method="post" class="mt-5 text-center">
         <h3>Add an Animal</h3>
         <hr>
-
         {{#if endangered}}
             <div class="form-group">
                 <label for="type">Type</label><br>
@@ -76,11 +75,9 @@
             </div>
         {{/if}}
 
-        <div class="form-group pt-3">
+        <div class="form-group pt-3 pb-2">
             <button type="submit" class="btn btn-primary btn-lg"> Create </button>
         </div>
     </form>
-
-</center>
 {{/partial}}
 {{>layout.hbs}}
