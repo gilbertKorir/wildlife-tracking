@@ -1,19 +1,15 @@
 {{#partial "content"}}
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-4 pb-2 pt-2">
                 {{#if locations}}
                     {{#each locations as |l|}}
-                        <div class="entries">
-                            <p class="text" id={{l.id}}>{{l.name}}</p><br>
-                            <a href="/view/location/sightings/{{l.id}}"><button class="btn btn-primary btn-md">View
-                                Sightings</button></a>
-<!--                            <a href="/view/location/delete/{{l.id}}"><button class="btn btn-danger-->
-<!--                            btn-md">Delete Location</button></a>-->
+                        <div class="entries pb-2 bg-success">
+                            <p class="text" id={{l.id}}>Location: {{l.name}}</p><br>
+                            <a href="/view/location/sightings/{{l.id}}"><button class="btn btn-primary btn-md">Sightings</button></a>
                         </div>
-                        <hr><br>
+                        <br>
                     {{/each}}
-
                 {{else}}
                     <p class="text display-4">There are no locations! Create some <a href="/create/location">here</a></p>
                 {{/if}}
@@ -31,7 +27,6 @@
                             {{#each sightings as |s|}}
                                 <li class="card-text ">{{s}}</li>
                             {{/each}}
-
                         </div>
                         <div class="col-md-2">
                             <h3>Animal</h3>
@@ -39,7 +34,6 @@
                             {{#each animals as |a|}}
                                 <li class="card-text ">{{a}}</li>
                             {{/each}}
-
                         </div>
                         <div class="col-md-2">
                             <h3>Type</h3>
@@ -47,9 +41,7 @@
                             {{#each types as |t|}}
                                 <li class="card-text ">{{t}}</li>
                             {{/each}}
-
                         </div>
-
                     </div>
                 </div>
             {{else}}

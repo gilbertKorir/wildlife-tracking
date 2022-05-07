@@ -6,12 +6,9 @@
             <div class="col-md-4 pt-2 pb-2">
                 {{#if rangers}}
                     {{#each rangers as |r|}}
-                        <div class="entries bg-success">
+                        <div class="entries bg-success pb-2">
                             <p class="text">Ranger: {{r.name}}</p><br>
-                            <a href="/view/ranger/sightings/{{r.id}}" class="pb-2"><button class="btn btn-primary btn-md">View
-                                Sightings</button></a>
-<!--                            <a href="/view/ranger/delete/{{r.id}}"><button class="btn btn-danger-->
-<!--                            btn-md">Delete Ranger</button></a>-->
+                            <a href="/view/ranger/sightings/{{r.id}}" class="mb-3"><button class="btn btn-primary btn-md">Sightings</button></a>
                         </div>
                         <br>
                     {{/each}}
