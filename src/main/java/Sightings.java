@@ -48,8 +48,48 @@ public class Sightings {
                     .executeAndFetch(Sightings.class);
         }
     }
-
+    // find the sightings
+    public static Sightings find(int id){
+        try(Connection con = DB.sql2o.open()){
+            String sql="SELECT * FROM sightings WHERE id=:id";
+            return con.createQuery(sql)
+                    .addParameter("id",id)
+                    .executeAndFetchFirst(Sightings.class);
+        }
+    }
+    //delete the sighting
+    public void delete(){
+        try(Connection con = DB.sql2o.open()){
+            String sql="DELETE FROM sightings WHERE id=:id";
+            con.createQuery(sql)
+                    .addParameter("id",this.id)
+                    .executeUpdate();
+        }
+    }
+    // remove all sightings
+    public static void deleteAll(){
+        try(Connection con = DB.sql2o.open()){
+            String sql="DELETE FROM sightings";
+            con.createQuery(sql)
+                    .executeUpdate();
+        }
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
