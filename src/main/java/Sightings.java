@@ -16,5 +16,40 @@ public class Sightings {
         this.animal_id = animal_id;
         this.time = new Timestamp(date.getTime());
     }
+    //getters
 
+
+    public int getAnimal_id() {
+        return animal_id;
+    }
+
+    public int getRanger_id() {
+        return ranger_id;
+    }
+
+    public int getLocation_id() {
+        return location_id;
+    }
+
+    public int getId() {
+        return id;
+    }
+    public Timestamp getTime() {
+        return time;
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
