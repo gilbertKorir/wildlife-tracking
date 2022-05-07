@@ -10,3 +10,14 @@ background-color: black;
 text-align: center;
 color: white;
 }
+.form-group{
+
+}
+form{
+    background-color:green;
+    text-align: center;
+        width:50%;
+        margin:auto;
+        margin-top:50px;
+        text-align:center;
+}
