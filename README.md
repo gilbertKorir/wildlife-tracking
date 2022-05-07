@@ -1,22 +1,21 @@
-#                                                         WILDLIFE TRACKER!
+### WILDLIFE TRACKER!
 
-## AUTHOR
+### Developed by: [Gilbert Korir.](https://github.com/gilbertKorir)
 
 ## DESCRIPTION 
-
-This application allows Rangers to track wildlife sightings in the area, record them and ensure the animals are isolated to a safer zone. All with the help of a user-friendly interface and fast database.
+The website allows Rangers to track wildlife sightings in the area. A wildlife entity is either an Animal or an endangered animal. When wild life is spotted, the ranger submits a form to create a sighting.
 
 [Check-Out App!](https://wl-tracker.herokuapp.com/)
 
 ## User Story
 
-- Ranger can add a Animal.
+- Ranger can add an Animal.
 
 - Ranger add a Sighting of a Single Animal
 
 - Ranger can delete both Animal and Sightings Recorded.
 
-- Application can Keep track of Engdangered animals, health, date of sighting, location age, identity number and number of animals.
+- Application can Keep track of Endangered animals, health, date of sighting, location age, identity number and number of animals.
 
 ## PRE-REQUISITES.
 
@@ -37,6 +36,19 @@ This application allows Rangers to track wildlife sightings in the area, record 
 6. If you have all the **Pre-requisites** you can run the application.
 
 
+### DATABASE SET UP.
+`
+In PSQL:
+* CREATE DATABASE wildlife_tracker;
+* \c wildlife_tracker
+* CREATE TABLE animals (id serial PRIMARY KEY, name varchar,type VARCHAR,health VARCHAR,age VARCHAR);
+* CREATE TABLE locations (id serial PRIMARY KEY,name VARCHAR);
+* CREATE TABLE rangers (id serial PRIMARY KEY,name VARCHAR,badge_number VARCHAR, phone_number VARCHAR);
+* CREATE TABLE sightings (id serial PRIMARY KEY,animal_id INT,ranger_id INT,location_id INT,time TIMESTAMP);
+* CREATE TABLE locations_sightings (id serial PRIMARY KEY,location_id INT,sighting_id INT);
+* CREATE TABLE rangers_sightings (id serial PRIMARY KEY,ranger_id INT,sighting_id INT);
+* CREATE DATABASE wildlife_tracker_test WITH TEMPLATE wildlife_tracker;
+`
 ### TECHNOLOGIES USED:
 
 - **[Java](https://java.com/en/download/) - source language.**
@@ -48,7 +60,6 @@ This application allows Rangers to track wildlife sightings in the area, record 
 - Cascading Style Sheets.
 
 - Apache Handlebars Engine.
-
 
 ## License
 
