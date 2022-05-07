@@ -97,6 +97,7 @@ public class App {
             List<Sightings> sightings=foundLocation.getLocationSightings();
             ArrayList<String> animals=new ArrayList<String>();
             ArrayList<String> types=new ArrayList<String>();
+
             for (Sightings sighting : sightings){
                 String animal_name=Animals.find(sighting.getAnimal_id()).getName();
                 String animal_type=Animals.find(sighting.getAnimal_id()).getType();
