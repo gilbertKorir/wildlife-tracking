@@ -1,0 +1,12 @@
+body{
+    text-align: center;
+    background-image:url("/images/f2.jpeg");
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.animalform{
+background-color: black;
+text-align: center;
+color: white;
+}

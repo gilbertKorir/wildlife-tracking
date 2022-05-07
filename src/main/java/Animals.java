@@ -2,6 +2,7 @@ import org.sql2o.Sql2oException;
 //import java.sql.Connection;
 import org.sql2o.Connection;
 
+import java.util.List;
 import java.util.Objects;
 
 public class Animals implements DatabaseManagement {
@@ -118,6 +119,15 @@ public class Animals implements DatabaseManagement {
                     .executeUpdate();
         } catch (Sql2oException ex) {
             System.out.println(ex);
+        }
+    }
+    public static List<Animals> all(){
+        try (Connection con=DB.sql2o.open()) {
+            String sql ="SELECT * FROM animals";
+            return con.createQuery(sql)
+                    .throwOnMappingFailure(false)
+                    .executeAndFetch(Animals.class);
+
         }
     }
     @Override

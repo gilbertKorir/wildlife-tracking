@@ -1,6 +1,6 @@
 import org.sql2o.Connection;
 
-public class EndageredAnimals extends Animals implements DatabaseManagement {
+public class EndangeredAnimals extends Animals implements DatabaseManagement {
     private String health;
     private String age;
 
@@ -16,7 +16,7 @@ public class EndageredAnimals extends Animals implements DatabaseManagement {
 
     //constant type
     public static final String ANIMAL_TYPE="endangered";
-public EndageredAnimals(String name,String type,String health,String age){
+public EndangeredAnimals(String name, String type, String health, String age){
     super(name, type); // call superclass(Animals) methods, and to access the superclass constructor
     this.health=health;
     this.age=age;
