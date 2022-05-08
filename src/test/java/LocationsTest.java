@@ -16,8 +16,8 @@ class LocationsTest {
     @AfterEach
     public void after(){
         try(Connection con = DB.sql2o.open()) {
-            String deleteAnimalQuery="DELETE FROM locations ";
-            con.createQuery(deleteAnimalQuery).executeUpdate();
+            String deleteLOcationQuery="DELETE FROM locations ";
+            con.createQuery(deleteLOcationQuery).executeUpdate();
         }catch (Exception e){
             System.out.println(e);
         }
