@@ -1,12 +1,23 @@
 ### WILDLIFE TRACKER!
 
-### Developed by: [Gilbert Korir.](https://github.com/gilbertKorir)
+##### Developed by: [Gilbert Korir.](https://github.com/gilbertKorir)
 
 ## DESCRIPTION 
 The website allows Rangers to track wildlife sightings in the area. A wildlife entity is either an Animal or an endangered animal. When wild life is spotted, the ranger submits a form to create a sighting.
 
-[Check-Out App!](https://wl-tracker.herokuapp.com/)
 
+## Table of Contents
+
+- [Sections](#sections)
+    - [User Story](#install)
+    - [Screen Shots](#screen-shots)
+    - [Set up/Installation](#setup/insallation)
+    - [Database Set Up](#database-set-up)
+    - [Usage](#usage)
+    - [Known Bugs](#known-bugs)
+    - [License](#license)
+
+    
 ## User Story
 
 - Ranger can add an Animal.
@@ -17,26 +28,24 @@ The website allows Rangers to track wildlife sightings in the area. A wildlife e
 
 - Application can Keep track of Endangered animals, health, date of sighting, location age, identity number and number of animals.
 
-## PRE-REQUISITES.
+## Screen Shots
 
-## **SETUP/INSTALLATION!**
+<img src="https://i.postimg.cc/hPC3JZNS/scr2.png" alt="Home" width="400"><img src="https://i.postimg.cc/FRgThTjX/scr1.png" alt="Home" width="400">
+
+
+## Set Up/Installation
 
 **{follow the below instructions for set up.}**
-
+```
 1. You will need Internet connection.
+2. Clone the repo `https://github.com/gilbertKorir/wildlife-tracking`
 
-2. You need to get into the Project Repository.
+3. cd wildlife-tracking
 
-3. From there you can access the Wildlife Tracker.
+4. If you have all the **Pre-requisites** you can run the application.
+```
 
-4. **Clone** the project.
-
-5. **get into project folder** (cd into project).
-
-6. If you have all the **Pre-requisites** you can run the application.
-
-
-### DATABASE SET UP.
+### Database Set Up
 ```
 * Type in psql
 * CREATE DATABASE wildlife_tracker;
@@ -49,6 +58,14 @@ The website allows Rangers to track wildlife sightings in the area. A wildlife e
 * CREATE TABLE rangers_sightings (id serial PRIMARY KEY,ranger_id INT,sighting_id INT);
 * CREATE DATABASE wildlife_tracker_test WITH TEMPLATE wildlife_tracker;
 ```
+
+## Usage
+
+[Check-Out My App!](https://wl-tracker.herokuapp.com/)
+
+## Known Bugs
+1. User Cannot delete an animal or anything once entered.
+
 ### TECHNOLOGIES USED:
 
 - **[Java](https://java.com/en/download/) - source language.**
@@ -56,11 +73,15 @@ The website allows Rangers to track wildlife sightings in the area. A wildlife e
 - **[Gradle](https://gradle.org/) for dependency management and running tasks.**
 
 - Bootstrap.
-
+- Maven
 - Cascading Style Sheets.
-
 - Apache Handlebars Engine.
+
 
 ## License
 
-The app is licensed by MIT. [**HERE**](LICENSE)
+MIT This project is licensed under the terms of the MIT license. Copyright (c) 2022 Gilbert Korir
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
