@@ -21,11 +21,11 @@
                     <div class="card-body">
                         <h1 class="card-title">Sightings</h1>
                         <hr>
-                        <div class="col-md-2">
+                        <div class="col-md-4">
                             <h3>Time</h3>
                             <hr>
                             {{#each sightings as |s|}}
-                                <li class="card-text ">{{s}}</li>
+                                <li class="card-text ">{{s.time}}</li>
                             {{/each}}
                         </div>
                         <div class="col-md-2">
