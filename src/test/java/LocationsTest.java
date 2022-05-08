@@ -16,8 +16,8 @@ class LocationsTest {
     @AfterEach
     public void after(){
         try(Connection con = DB.sql2o.open()) {
-            String deleteAnimalQuery="DELETE FROM locations ";
-            con.createQuery(deleteAnimalQuery).executeUpdate();
+            String deleteLOcationQuery="DELETE FROM locations ";
+            con.createQuery(deleteLOcationQuery).executeUpdate();
         }catch (Exception e){
             System.out.println(e);
         }
@@ -39,6 +39,16 @@ class LocationsTest {
        }catch (IllegalArgumentException e){
            System.out.println(e);
        }
+   }
+   //delete
+   @Test
+   public void entryIsDeletedSuccessfully() {
+       Locations location=setLocation();
+       Locations newLocation=new Locations("side Hill");
+       location.save();
+       newLocation.save();
+       location.delete();
+       assertEquals(null,Locations.find(location.getId()));
    }
 
    //help
