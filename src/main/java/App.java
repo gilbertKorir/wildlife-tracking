@@ -24,7 +24,7 @@ public class App {
             return new ModelAndView(model, "animal-form.hbs");
         }, new HandlebarsTemplateEngine());
         post("/create/animal/new",(request, response) -> {
-            Map<String, Object> model = new HashMap<String, Object>();
+            Map<String,Object> model = new HashMap<String, Object>();
             String type = request.queryParams("type");
             System.out.println(type);
             String health = request.queryParams("health");
@@ -175,18 +175,18 @@ public class App {
             List<Sightings> sightings=Sightings.all();
             ArrayList<String> animals=new ArrayList<String>();
             ArrayList<String> types=new ArrayList<String>();
+
             for (Sightings sighting : sightings){
-                String animal_name=Animals.find(sighting.getAnimal_id()).getName();
-                String animal_type=Animals.find(sighting.getAnimal_id()).getType();
-                animals.add(animal_name);
-                types.add(animal_type);
+//                String animal_name=Animals.find(sighting.getAnimal_id()).getName();
+//                String animal_type=Animals.find(sighting.getAnimal_id()).getType();
+//                animals.add(animal_name);
+//                types.add(animal_type);
             }
             model.put("sightings",sightings);
             model.put("animals",animals);
             model.put("types",types);
             return new ModelAndView(model,"sighting-page.hbs");
         },new HandlebarsTemplateEngine());
-
     }
 }
 

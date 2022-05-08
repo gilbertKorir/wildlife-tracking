@@ -78,7 +78,6 @@ public class Sightings {
     }
     // save the sighting
     public void save(){
-
         if(this.animal_id==-1||this.location_id==-1||this.ranger_id==-1){
             throw new IllegalArgumentException("Edite your fields");
         }

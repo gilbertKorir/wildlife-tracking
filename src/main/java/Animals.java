@@ -52,7 +52,6 @@ public class Animals implements DatabaseManagement {
                     .addParameter("type", this.type)
                     .executeUpdate()
                     .getKey();
-
         }
     }
 
