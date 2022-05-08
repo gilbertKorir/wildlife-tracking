@@ -43,10 +43,52 @@ class AnimalsTest {
         testAnimals.delete();
         assertEquals(null, Animals.find(testAnimals.getId()));
     }
+    // catch empty error
+    @Test
+    public void checkIfempty(){
+        Animals testAnimal = new Animals("","normal");
+        try{
+            testAnimal.save();
+        }catch(IllegalArgumentException e){
 
+        }
+    }
+    // clear all animals
+    @Test
+    public void deleteAll(){
+        Animals animal1 = setUpAnimal();
+        Animals animal2 =setUpAnimal();
+        animal1.save();
+        animal2.save();
+        Animals.deleteAll();
+        List<Animals> animals = Animals.all();
+        assertEquals(0,animals.size());
+    }
+    //return correct data of animal
+    @Test
+    public void findbyId(){
+        Animals testAnimal = setUpAnimal();
+        testAnimal.save();
+        Animals found = Animals.find(testAnimal.getId());
+        assertTrue(found.equals(testAnimal));
+    }
+    // correct update
+    @Test
+    public void ensureEntryIsUpdatedCorrectly() {
+        Animals testAnimal=setUpAnimal();
+        Animals otherAnimal=testAnimal;
+        testAnimal.save();
+        try {
+            testAnimal.update(testAnimal.getId(),"endangered","ill","young");
+            Animals updatedAnimal=  Animals.find(testAnimal.getId());
+            assertEquals(updatedAnimal.getId(),otherAnimal.getId());
+            assertNotEquals(updatedAnimal.getHealth(),otherAnimal.getHealth());
+        }catch (IllegalArgumentException e){
 
+        }
+    }
 
-    //
+    //helper
     private Animals setUpAnimal() {
         return new Animals("deer", "endangered");
     }
