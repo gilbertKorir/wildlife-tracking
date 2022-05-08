@@ -40,6 +40,16 @@ class LocationsTest {
            System.out.println(e);
        }
    }
+   //delete
+   @Test
+   public void entryIsDeletedSuccessfully() {
+       Locations location=setLocation();
+       Locations newLocation=new Locations("side Hill");
+       location.save();
+       newLocation.save();
+       location.delete();
+       assertEquals(null,Locations.find(location.getId()));
+   }
 
    //help
     private Locations setLocation() {
