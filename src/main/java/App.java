@@ -20,8 +20,10 @@ public class App {
         return 4567; //return default port if heroku-port isn't set (i.e. on localhost)
     }
     public static void main(String[] args) {
+
         port(getHerokuAssignedPort());
         staticFileLocation("/public");
+
         get("/", (request, response) ->{
             Map<String, Object> model = new HashMap<String, Object>();
             return new ModelAndView(model, "index.hbs");
