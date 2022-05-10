@@ -8,23 +8,20 @@ The website allows Rangers to track wildlife sightings in the area. A wildlife e
 
 ## Table of Contents
 
-- [Sections](#sections)
-    - [User Story](#install)
-    - [Screen Shots](#screen-shots)
-    - [Set up/Installation](#setup/insallation)
-    - [Database Set Up](#database-set-up)
-    - [Usage](#usage)
-    - [Known Bugs](#known-bugs)
-    - [License](#license)
++ [User Story](#user-story)
++ [Screen Shots](#screen-shots)
++ [Set up](#set-up)
++ [Database Set Up](#database-set-up)
++ [Usage](#usage)
++ [Known Bugs](#known-bugs)
++ [License](#license)
 
     
 ## User Story
 
-- Ranger can add an Animal.
+- Ranger can add an Animal and a Ranger details.
 
-- Ranger add a Sighting of a Single Animal
-
-- Ranger can delete both Animal and Sightings Recorded.
+- Ranger add a Sighting and a location of a Single Animal
 
 - Application can Keep track of Endangered animals, health, date of sighting, location age, identity number and number of animals.
 
@@ -61,7 +58,7 @@ The website allows Rangers to track wildlife sightings in the area. A wildlife e
 
 ## Usage
 
-[Check-Out My App!](https://wl-tracker.herokuapp.com/)
+[Check-Out My App!](https://my-animal-tracker.herokuapp.com/)
 
 ## Known Bugs
 1. User Cannot delete an animal or anything once entered.
