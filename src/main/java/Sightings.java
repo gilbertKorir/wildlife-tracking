@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Objects;
 
 import org.sql2o.Connection;
+import org.sql2o.Sql2oException;
 
 public class Sightings {
     private int animal_id;
@@ -66,6 +67,8 @@ public class Sightings {
             con.createQuery(sql)
                     .addParameter("id",this.id)
                     .executeUpdate();
+        }catch (Sql2oException e) {
+            System.out.println(e);
         }
     }
     // remove all sightings
@@ -74,6 +77,8 @@ public class Sightings {
             String sql="DELETE FROM sightings";
             con.createQuery(sql)
                     .executeUpdate();
+        }catch (Sql2oException e) {
+            System.out.println(e);
         }
     }
     // save the sighting
@@ -100,6 +105,8 @@ public class Sightings {
                     this.getId()).executeUpdate();
             con.createQuery(joinLocation).addParameter("location_id",this.getLocation_id()).addParameter("sighting_id",
                     this.id).executeUpdate();
+        }catch (Sql2oException e) {
+            System.out.println(e);
         }
     }
     @Override

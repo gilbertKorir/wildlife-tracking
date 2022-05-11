@@ -1,6 +1,7 @@
 //import java.sql.Connection;
 import java.util.List;
 import org.sql2o.Connection;
+import org.sql2o.Sql2oException;
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -40,6 +41,8 @@ public class Locations {
                  .addParameter("name",this.name)
                  .executeUpdate()
                  .getKey();
+        }catch (Sql2oException e) {
+            System.out.println(e);
         }
     }
     // delete location
@@ -49,6 +52,8 @@ public class Locations {
             con.createQuery(sql)
                     .addParameter("id", this.id)
                     .executeUpdate();
+        }catch (Sql2oException e) {
+            System.out.println(e);
         }
     }
     //find location
@@ -60,6 +65,7 @@ public class Locations {
                     .throwOnMappingFailure(false)
                     .executeAndFetchFirst(Locations.class);
         }
+
     }
     // get sightings from location table
     public List<Sightings> getLocationSightings(){

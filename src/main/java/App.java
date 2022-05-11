@@ -28,7 +28,8 @@ public class App {
             Map<String, Object> model = new HashMap<String, Object>();
             return new ModelAndView(model, "index.hbs");
         }, new HandlebarsTemplateEngine());
-        // animal
+
+        // Create animal
         get("/create/animal", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
             return new ModelAndView(model, "animal-form.hbs");
@@ -53,6 +54,8 @@ public class App {
             }
             return new ModelAndView(model,"animal-form.hbs");
         }, new HandlebarsTemplateEngine());
+
+        //Create an endangered animal
         get("/create/animal/endangered",(request, response) -> {
             Map<String,Object> model=new HashMap<String, Object>();
             List<String> health= new ArrayList<String>();
@@ -70,13 +73,14 @@ public class App {
             return new ModelAndView(model,"animal-form.hbs");
         },new HandlebarsTemplateEngine());
 
+        // View the list of animals
         get("/view/animals",(request, response) -> {
             Map<String,Object> model=new HashMap<String, Object>();
             model.put("animals",Animals.all());
             return new ModelAndView(model,"animal-page.hbs");
         },new HandlebarsTemplateEngine());
 
-        //location
+        // Add a location
         get("/create/location",(request, response) -> {
             Map<String,Object> model=new HashMap<String, Object>();
             return new ModelAndView(model,"location-form.hbs");
@@ -94,6 +98,8 @@ public class App {
 
             return new ModelAndView(model,"location-form.hbs");
         },new HandlebarsTemplateEngine());
+
+        //view the list of available locations
         get("/view/locations",(request, response) -> {
             Map<String,Object> model=new HashMap<String, Object>();
             model.put("locations",Locations.all());
@@ -120,7 +126,8 @@ public class App {
             model.put("locations",Locations.all());
             return new ModelAndView(model,"location-page.hbs");
         },new HandlebarsTemplateEngine());
-        //ranger
+
+        //Add a new ranger
         get("/create/ranger",(request, response) -> {
             Map<String,Object> model=new HashMap<String, Object>();
             return new ModelAndView(model,"ranger-form.hbs");
@@ -135,11 +142,15 @@ public class App {
             ranger.save();
             return new ModelAndView(model,"ranger-form.hbs");
         },new HandlebarsTemplateEngine());
+
+        //view ranger list
         get("/view/rangers",(request, response) -> {
             Map<String,Object> model=new HashMap<String, Object>();
             model.put("rangers",Rangers.all());
             return new ModelAndView(model,"ranger-page.hbs");
         },new HandlebarsTemplateEngine());
+
+        //ranger list with sightings
         get("/view/ranger/sightings/:id",(request, response) -> {
             Map<String,Object> model=new HashMap<String, Object>();
             int idOfRanger= Integer.parseInt(request.params(":id"));
@@ -160,7 +171,7 @@ public class App {
             return new ModelAndView(model,"ranger-page.hbs");
         },new HandlebarsTemplateEngine());
 
-        //sighting
+        //create sighting
         get("/create/sighting",(request, response) -> {
             Map<String,Object> model=new HashMap<String, Object>();
             model.put("rangers",Rangers.all());
@@ -180,6 +191,7 @@ public class App {
             return new ModelAndView(model,"sighting-form.hbs");
         },new HandlebarsTemplateEngine());
 
+        //view the available sightings
         get("/view/sightings",(request, response) -> {
             Map<String,Object> model=new HashMap<String, Object>();
             List<Sightings> sightings=Sightings.all();

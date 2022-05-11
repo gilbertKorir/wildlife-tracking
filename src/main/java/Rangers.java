@@ -1,6 +1,8 @@
 //import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.List;
 import org.sql2o.Connection;
+import org.sql2o.Sql2oException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -54,6 +56,8 @@ public class Rangers {
                     .addParameter("phone_number", this.phone_number)
                     .executeUpdate()
                     .getKey();
+        }catch (Sql2oException e) {
+            System.out.println(e);
         }
     }
     public static Rangers find(int id){
@@ -76,6 +80,8 @@ public class Rangers {
                     .addParameter("name",name)
                     .addParameter("phone_number",phone_number)
                     .executeUpdate();
+        }catch (Sql2oException e) {
+            System.out.println(e);
         }
     }
     //delete ranger
@@ -85,6 +91,8 @@ public class Rangers {
             con.createQuery(sql)
                     .addParameter("id",this.id)
                     .executeUpdate();
+        }catch (Sql2oException e) {
+            System.out.println(e);
         }
     }
     //get ranger sightings

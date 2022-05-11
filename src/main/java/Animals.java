@@ -52,6 +52,8 @@ public class Animals implements DatabaseManagement {
                     .addParameter("type", this.type)
                     .executeUpdate()
                     .getKey();
+        }catch (Sql2oException e) {
+            System.out.println(e);
         }
     }
 
@@ -108,6 +110,8 @@ public class Animals implements DatabaseManagement {
                     .addParameter("id", this.id)
                     .executeUpdate();
 
+        }catch (Sql2oException e) {
+            System.out.println(e);
         }
     }
 
