@@ -1,5 +1,5 @@
 public interface DatabaseManagement {
-    //CREATE
+    //CREATE AND READ
     boolean equals(Object o);
     //UPDATE
     void save();
